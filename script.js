@@ -7,14 +7,14 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.treat-button').click(clickedTreatButton);
     $('.play-button').click(clickedPlayButton);
     $('.exercise-button').click(clickedExerciseButton);
-  
-
+    $('.backflip-button').click(clickedBackflipButton);
+    $('.talk-button').click(clickedTalkButton);
   
     
   })
   
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
-    var pet_info = {name:"My Pet Name", weight:"??", happiness:"??"};
+    var pet_info = {name:"Lil Bambino", weight:"54", happiness:"66"};
   
     function clickedTreatButton() {
       // Increase pet happiness
@@ -31,6 +31,16 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     function clickedExerciseButton() {
       // Decrease pet happiness
       // Decrease pet weight
+      checkAndUpdatePetInfoInHtml();
+    }
+
+    function clickedBackflipButton() {
+      // try to make the image/pet backflip(?)
+      checkAndUpdatePetInfoInHtml();
+    }
+
+    function clickedTalkButton() {
+      // implement code that makes the user able to type what it wants it to say
       checkAndUpdatePetInfoInHtml();
     }
   
