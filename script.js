@@ -10,6 +10,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.backflip-button').click(clickedBackflipButton);
     $('.talk-button').click(clickedTalkButton);
   
+
     
   })
   
@@ -40,7 +41,15 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     }
 
     function clickedTalkButton() {
-      // implement code that makes the user able to type what it wants it to say
+      var randomDialogue = $('.random-dialogue span');
+      var randomIndex = Math.floor(Math.random() * randomDialogue.length);
+
+      var selectedDialogue = randomDialogue.eq(randomIndex);
+      var dialogueIndex = randomDialogue.index(selectedDialogue);
+
+      $('.talkoption').text(randomDialogue.eq(dialogueIndex).text());
+
+      
       checkAndUpdatePetInfoInHtml();
     }
   
