@@ -20,27 +20,27 @@
       function clickedFeedButton() {
         pet_info.happiness += 4;
         pet_info.weight += 4;
+        $('.talkoption').text("'FOOD. DELICIOUS'");
         checkAndUpdatePetInfoInHtml();
         // visual cue notification requirement, just spits out pre-written sentence anytime u click it
-        $('.talkoption').text("'FOOD. DELICIOUS'");
       }
       
     // plays with the pet, happiness goes up by 4, weight goes down by 2, calculates and updates current values.
       function clickedPlayButton() {
         pet_info.happiness += 4;
         pet_info.weight -= 2;
+        $('.talkoption').text("'FUN!'");
         checkAndUpdatePetInfoInHtml();
         // visual cue notification requirement, just spits out pre-written sentence anytime u click it
-        $('.talkoption').text("'FUN!'");
       }
     
     // exercises the pet, lose a happiness and 4 weight, calculate and update the current numbers.
       function clickedExerciseButton() {
         pet_info.happiness -= 1;
         pet_info.weight -= 4;
+        $('.talkoption').text("'Hamster Wheel time..yep.'");
         checkAndUpdatePetInfoInHtml();
         // visual cue notification requirement, just spits out pre-written sentence anytime u click it
-        $('.talkoption').text("'Hamster Wheel time..yep.'");
       }
 
     // press this as much as you want to generate 1 of 5 random dialogue i wrote down in index.html
