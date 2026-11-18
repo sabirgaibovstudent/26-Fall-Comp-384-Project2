@@ -22,7 +22,7 @@
         pet_info.weight += 4;
         checkAndUpdatePetInfoInHtml();
         // visual cue notification requirement, just spits out pre-written sentence anytime u click it
-        $('.talkoption').text("FOOD. DELICIOUS");
+        $('.talkoption').text("'FOOD. DELICIOUS'");
       }
       
     // plays with the pet, happiness goes up by 4, weight goes down by 2, calculates and updates current values.
@@ -31,7 +31,7 @@
         pet_info.weight -= 2;
         checkAndUpdatePetInfoInHtml();
         // visual cue notification requirement, just spits out pre-written sentence anytime u click it
-        $('.talkoption').text("FUN!");
+        $('.talkoption').text("'FUN!'");
       }
     
     // exercises the pet, lose a happiness and 4 weight, calculate and update the current numbers.
@@ -40,7 +40,7 @@
         pet_info.weight -= 4;
         checkAndUpdatePetInfoInHtml();
         // visual cue notification requirement, just spits out pre-written sentence anytime u click it
-        $('.talkoption').text("Hamster Wheel time..yep.");
+        $('.talkoption').text("'Hamster Wheel time..yep.'");
       }
 
     // press this as much as you want to generate 1 of 5 random dialogue i wrote down in index.html
@@ -73,7 +73,7 @@
     // pet is classified as hungry if the weight is 0
       var petIsHungry = pet_info.weight <= 0;
     // if the weight is 0, nothing else matters, only feed button will work
-      $('.play-button, .exercise-button, .backflip-button, .talk-button')
+      $('.play-button, .exercise-button, .talk-button')
         .prop('disabled', petIsHungry);
     // if the pet is actually hungry (weight is less than 0 or is 0) then warning will appear and change image to angry pet
       if (petIsHungry) {
