@@ -8,8 +8,6 @@
       $('.play-button').click(clickedPlayButton);
       $('.exercise-button').click(clickedExerciseButton);
       $('.talk-button').click(clickedTalkButton);
-    
-
       
     })
     
@@ -45,24 +43,25 @@
 
     // press this as much as you want to generate 1 of 5 random dialogue i wrote down in index.html
       function clickedTalkButton() {
-        // variable for random dialogue, the random-dialogue span is so it can actually take one of the 5 dialogues
+      // variable for random dialogue, the random-dialogue span is so it can actually take one of the 5 dialogues
         var randomDialogue = $('.random-dialogue span');
         
-        // math.random generates a random decimal but never 1 itself, which gets multiplied by the amount of pre-written dialogue, which would be 5 (identified by the .length)
-        // math.floor rounds it down to a whole number so it doesn't try to pick a whole number w a decimal, so it's forced to pick 1-5 at random from the
-        // pre-written dialogue
+      // math.random generates a random decimal but never 1 itself, which gets multiplied by the amount of pre-written dialogue, which would be 5 (identified by the .length)
+      // math.floor rounds it down to a whole number so it doesn't try to pick a whole number w a decimal, so it's forced to pick 1-5 at random from the
+      // pre-written dialogue
         var randomIndex = Math.floor(Math.random() * randomDialogue.length);
 
-        // .eq(randomIndex) selects the dialogue line from randomIndex. starts at 0 for the indexs line.
-        // jquery description: reduce the set of matched elements tothe one at the specified index
+      // .eq(randomIndex) selects the dialogue line from randomIndex. starts at 0 for the indexs line.
+      // jquery description: reduce the set of matched elements tothe one at the specified index
         var selectedDialogue = randomDialogue.eq(randomIndex);
         
-        // index finds the selected lines position within the randomDialogue list
-        // jquery description: search for a given element from among matched elements
+      // index finds the selected lines position within the randomDialogue list
+      // jquery description: search for a given element from among matched elements
         var dialogueIndex = randomDialogue.index(selectedDialogue);
 
-        // .text() gets the selected line to display onto the website, 
-        // .eq(dialogueIndex) selects one of the 5 dialogue in html <span> list, so if index is 4, then it displays the 4th line, vice versa for every other value
+      // .text() gets the selected line to display onto the website, 
+      // .eq(dialogueIndex) selects one of the 5 dialogue in html <span> list, 
+      // so if index is 4, then it displays the 4th line, vice versa for every other value
         $('.talkoption').text(randomDialogue.eq(dialogueIndex).text());
         
         checkAndUpdatePetInfoInHtml();
