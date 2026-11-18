@@ -48,7 +48,7 @@
         // variable for random dialogue, the random-dialogue span is so it can actually take one of the 5 dialogues
         var randomDialogue = $('.random-dialogue span');
         
-        // math.random generates a random decimal up to 1, which gets multiplied by the amount of pre-written dialogue, which would be 5 (identified by the .length)
+        // math.random generates a random decimal but never 1 itself, which gets multiplied by the amount of pre-written dialogue, which would be 5 (identified by the .length)
         // math.floor rounds it down to a whole number so it doesn't try to pick a whole number w a decimal, so it's forced to pick 1-5 at random from the
         // pre-written dialogue
         var randomIndex = Math.floor(Math.random() * randomDialogue.length);
@@ -61,7 +61,8 @@
         // jquery description: search for a given element from among matched elements
         var dialogueIndex = randomDialogue.index(selectedDialogue);
 
-        // .text() gets the selected line to display onto the website
+        // .text() gets the selected line to display onto the website, 
+        // .eq(dialogueIndex) selects one of the 5 dialogue in html <span> list, so if index is 4, then it displays the 4th line, vice versa for every other value
         $('.talkoption').text(randomDialogue.eq(dialogueIndex).text());
         
         checkAndUpdatePetInfoInHtml();
