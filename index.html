@@ -20,13 +20,14 @@
     <main>
       <section class="pet-image-container">
          <!-- Replace pet image with your own pet image -->
-        <img class="pet-image" src="">
+        <img class="pet-image" src="images/lilbambino.png" alt="Lil Bambino">
       </section>
       <section class="dashboard">
         <div>Name: <strong><span class="name"></span></strong></div>
         <div>Weight: <strong><span class="weight"></span> pounds</strong></div>
-        <div>Happiness: <strong><span class="happiness"></span> tail wags (per min)</strong></div>
-        
+        <div>Happiness: <strong><span class="happiness"></span> squeaking (per min)</strong></div>
+        <p class="warning"></p>
+
         <div class="random-dialogue" hidden>
           <span>"Hello there.."</span>
           <span>"I'm Lil Bambino"</span>
@@ -35,18 +36,17 @@
           <span>"Stop pressing that button."</span>
         </div>
 
+        <p class="talkoption" aria-live="polite"></p>
+
         <div class="button-container">
-          <button class="treat-button">
-            Treat
+          <button class="feed-button">
+            Feed
           </button>
           <button class="play-button">
             Play
           </button>
           <button class="exercise-button">
             Exercise
-          </button>
-          <button class="backflip-button">
-            Backflip
           </button>
           <button class="talk-button">
             Talk
