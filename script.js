@@ -8,11 +8,11 @@
       $('.play-button').click(clickedPlayButton);
       $('.exercise-button').click(clickedExerciseButton);
       $('.talk-button').click(clickedTalkButton);
-      
+      $('.pet-button').click(clickedPetButton);
     })
     
       // His name is Lil Bambino, he starts at weight 54 and Happiness(squeaks bpm) 66.
-      var pet_info = {name:"Lil Bambino", weight:54, happiness:66};
+      var pet_info = {name:"Lil Bambino", weight:54, happiness:66, pets: 5};
     
     // feeds the pet, increases it by 4 and gives 4 weight then checks/updates the outcome.
       function clickedFeedButton() {
@@ -37,6 +37,14 @@
         pet_info.happiness -= 1;
         pet_info.weight -= 4;
         $('.talkoption').text("'Hamster Wheel time..yep.'");
+        checkAndUpdatePetInfoInHtml();
+        // visual cue notification requirement, just spits out pre-written sentence anytime u click it
+      }
+
+      function clickedPetButton() {
+        pet_info.happiness += 5;
+        pet_info.pets += 1;
+        $('.talkoption').text("'Yippie!'");
         checkAndUpdatePetInfoInHtml();
         // visual cue notification requirement, just spits out pre-written sentence anytime u click it
       }
@@ -73,7 +81,7 @@
     // pet is classified as hungry if the weight is 0
       var petIsHungry = pet_info.weight <= 0;
     // if the weight is 0, nothing else matters, only feed button will work
-      $('.play-button, .exercise-button, .talk-button')
+      $('.play-button, .exercise-button, .talk-button, .pet-button')
         .prop('disabled', petIsHungry);
     // if the pet is actually hungry (weight is less than 0 or is 0) then warning will appear and change image to angry pet
       if (petIsHungry) {
@@ -104,4 +112,5 @@
         $('.name').text(pet_info['name']);
         $('.weight').text(pet_info['weight']);
         $('.happiness').text(pet_info['happiness']);
+        $('.pets').text(pet_info['pets']);
       }
